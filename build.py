@@ -12,7 +12,7 @@ Theme Name: The 516 Movement
 Theme URI: https://github.com/codysmith44/the516movement
 Author: Cody Smith
 Description: Modern block theme rebuild for M516, Inc. (The 516 Movement) - a Christ-centered ministry. Trial build.
-Version: 0.2.0
+Version: 0.3.0
 Requires at least: 6.5
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -125,6 +125,7 @@ home = ('<!-- wp:cover {"url":"'+U+'2015/08/Falls-Creek-2023-3.jpg","dimRatio":7
  +''.join(f'<!-- wp:image --><figure class="wp-block-image"><img src="{U}2015/08/{f}" alt="{a}"/></figure><!-- /wp:image -->' for f,a in [('Falls-Creek-2023-2-2.jpg','Ryan preaching at Falls Creek'),('Japan-2023-2-2.jpg','Mission trip to Japan'),('Duncan-2025-2.jpg','Event in Duncan, Oklahoma'),('Falls-Creek-Response-Time-2023-2.jpg','Response time at Falls Creek'),('Japan-2023-3.jpg','Ministry in Japan'),('Ryan-Dallas-Jersey-2.jpg','Ryan Young')])
  +'</figure><!-- /wp:gallery --></div><!-- /wp:group -->\n'
  +'<!-- wp:group {"style":{"spacing":{"padding":{"bottom":"3rem"}}},"layout":{"type":"constrained"}} --><div class="wp-block-group" style="padding-bottom:3rem">'+h('Jesus is The Answer')+p('Putting your faith in Jesus Christ is the most important decision that you will ever make.')+btns(('Read The Answer','/the-answer/'),('Armor Up Prayer','/armor-up/'))+'</div><!-- /wp:group -->\n'+cta)
+exec(open('v2.py').read())
 pages = {
  'Home': ('home', home),
  'About': ('about', img(U+'2015/08/Falls-Creek-2023-2-2.jpg','Students worshiping at a M516 event')+h('About M516')+p('Have you ever wanted to be a part of something that is bigger than yourself? Those who follow Christ are given that opportunity every day!')+q('In the same way, let your light shine before others, so that they may see your deeds and glorify your Father in heaven.','Matthew 5:16')+p('This is the core concept of The 516 Movement. We want to see a movement of God unlike anything we have ever seen before. If followers of Christ would live a Matthew 5:16 life, we believe that revival would break out. We desperately need <strong>revival</strong>! We need to not just pray for revival, we need to live for revival.')+p('We meet people every day that are looking for something — we want to help point these people to the Cross with our actions, with our words, and with our lives. We either point people <em>to</em> the Cross or we point people <em>away from</em> the Cross. We want to be light in our world and to point as many people to the Cross as we can!')+p('<strong>Let the movement begin!</strong>')+btns(('Book Your Next Event','/booking/'),('Donate','/donate/'))),
@@ -177,6 +178,7 @@ w('style.css', (T/'style.css').read_text()+"""
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 """)
 # ---- blueprint ----
+exec(open('v2post.py').read())
 order=['Home','About','Our Values','About Ryan','The Answer','Armor Up','Booking','Donate','The Marathon','Contact']
 php = "<?php require '/wordpress/wp-load.php';\n$pages = json_decode(base64_decode('%s'), true);\n" % __import__('base64').b64encode(json.dumps({k:{'slug':pages[k][0],'content':pages[k][1]} for k in order}).encode()).decode()
 php += r"""$ids=[]; $i=0;
@@ -194,5 +196,5 @@ def bp(theme_step):
   return {"$schema":"https://playground.wordpress.net/blueprint-schema.json","landingPage":"/","preferredVersions":{"php":"8.2","wp":"latest"},
    "features":{"networking":True},"login":True,
    "steps":[theme_step,{"step":"runPHP","code":php}]}
-json.dump(bp({"step":"installTheme","themeData":{"resource":"url","url":"https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=3"},"options":{"activate":True}}), open('blueprint.json','w'), indent=2)
+json.dump(bp({"step":"installTheme","themeData":{"resource":"url","url":"https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=4"},"options":{"activate":True}}), open('blueprint.json','w'), indent=2)
 json.dump(bp({"step":"activateTheme","themeFolderName":"the516movement"}), open('blueprint.local.json','w'), indent=2)
