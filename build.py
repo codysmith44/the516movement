@@ -1,6 +1,10 @@
 import json, os, pathlib
 T = pathlib.Path('theme/the516movement'); 
-for d in ['templates','parts','patterns','assets']: (T/d).mkdir(parents=True, exist_ok=True)
+import shutil
+for d in ['templates','parts','patterns','assets/fonts']: (T/d).mkdir(parents=True, exist_ok=True)
+for fam,files in [('oswald',['oswald-latin-wght-normal.woff2']),('inter',['inter-latin-wght-normal.woff2','inter-latin-wght-italic.woff2'])]:
+  for f in files: shutil.copy(f'node_modules/@fontsource-variable/{fam}/files/{f}', T/'assets/fonts'/f)
+  shutil.copy(f'node_modules/@fontsource-variable/{fam}/LICENSE', T/f'assets/fonts/{fam.upper()}-OFL.txt')
 U='https://the516movement.com/wp-content/uploads/'
 def w(p,s): (T/p).write_text(s)
 w('style.css', """/*
@@ -16,10 +20,9 @@ Text Domain: the516movement
 */
 """)
 w('functions.php', """<?php
-add_action('wp_enqueue_scripts', function(){ wp_enqueue_style('the516movement-fonts','https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Inter:wght@400;600&display=swap',[],null); wp_enqueue_style('the516movement', get_stylesheet_uri(), [], wp_get_theme()->get('Version')); });
+add_action('wp_enqueue_scripts', function(){ wp_enqueue_style('the516movement', get_stylesheet_uri(), [], wp_get_theme()->get('Version')); });
 add_action('init', function(){ register_block_pattern_category('the516movement',['label'=>'The 516 Movement']); });
 """)
-w('assets/extra.css','')
 theme = {
  "$schema":"https://schemas.wp.org/trunk/theme.json","version":3,
  "settings":{"appearanceTools":True,"useRootPaddingAwareAlignments":True,"layout":{"contentSize":"760px","wideSize":"1200px"},
@@ -32,8 +35,8 @@ theme = {
    {"slug":"light","name":"Light","color":"#f5f5f5"},
    {"slug":"base","name":"White","color":"#ffffff"}]},
   "typography":{"fluid":True,"fontFamilies":[
-   {"slug":"heading","name":"Roboto Condensed","fontFamily":"'Roboto Condensed', 'Helvetica Neue', Arial, sans-serif"},
-   {"slug":"body","name":"Inter","fontFamily":"Inter, 'Helvetica Neue', Arial, sans-serif"}],
+   {"slug":"heading","name":"Oswald","fontFamily":"Oswald, system-ui, sans-serif","fontFace":[{"fontFamily":"Oswald","fontWeight":"500 700","fontStyle":"normal","fontDisplay":"swap","src":["file:./assets/fonts/oswald-latin-wght-normal.woff2"]}]},
+   {"slug":"body","name":"Inter","fontFamily":"Inter, system-ui, sans-serif","fontFace":[{"fontFamily":"Inter","fontWeight":"100 900","fontStyle":"normal","fontDisplay":"swap","src":["file:./assets/fonts/inter-latin-wght-normal.woff2"]},{"fontFamily":"Inter","fontWeight":"100 900","fontStyle":"italic","fontDisplay":"swap","src":["file:./assets/fonts/inter-latin-wght-italic.woff2"]}]}],
    "fontSizes":[{"slug":"small","size":"0.9rem","name":"Small"},{"slug":"medium","size":"1.125rem","name":"Medium"},
     {"slug":"large","size":"1.6rem","name":"Large","fluid":{"min":"1.35rem","max":"1.6rem"}},
     {"slug":"x-large","size":"2.4rem","name":"XL","fluid":{"min":"1.8rem","max":"2.4rem"}},
@@ -43,7 +46,7 @@ theme = {
   "typography":{"fontFamily":"var(--wp--preset--font-family--body)","fontSize":"var(--wp--preset--font-size--medium)","lineHeight":"1.7"},
   "spacing":{"blockGap":"1.5rem","padding":{"left":"1.25rem","right":"1.25rem"}},
   "elements":{
-   "heading":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"700","lineHeight":"1.15"},"color":{"text":"var(--wp--preset--color--navy)"}},
+   "heading":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"600","lineHeight":"1.15"},"color":{"text":"var(--wp--preset--color--navy)"}},
    "link":{"color":{"text":"var(--wp--preset--color--primary)"},":hover":{"color":{"text":"var(--wp--preset--color--navy)"}},":focus":{"outline":{"width":"2px","style":"solid","color":"var(--wp--preset--color--accent)","offset":"2px"}}},
    "button":{"color":{"background":"var(--wp--preset--color--primary)","text":"#fff"},"border":{"radius":"6px"},"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.04em"},"spacing":{"padding":{"top":".8rem","bottom":".8rem","left":"1.6rem","right":"1.6rem"}},
      ":hover":{"color":{"background":"var(--wp--preset--color--navy)"}},":focus":{"outline":{"width":"3px","style":"solid","color":"var(--wp--preset--color--accent)","offset":"2px"}}}},
@@ -191,5 +194,5 @@ def bp(theme_step):
   return {"$schema":"https://playground.wordpress.net/blueprint-schema.json","landingPage":"/","preferredVersions":{"php":"8.2","wp":"latest"},
    "features":{"networking":True},"login":True,
    "steps":[theme_step,{"step":"runPHP","code":php}]}
-json.dump(bp({"step":"installTheme","themeData":{"resource":"url","url":"https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=2"},"options":{"activate":True}}), open('blueprint.json','w'), indent=2)
+json.dump(bp({"step":"installTheme","themeData":{"resource":"url","url":"https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=3"},"options":{"activate":True}}), open('blueprint.json','w'), indent=2)
 json.dump(bp({"step":"activateTheme","themeFolderName":"the516movement"}), open('blueprint.local.json','w'), indent=2)

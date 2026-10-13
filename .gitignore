@@ -1,5 +1,5 @@
 node_modules/
 src/
 home.html
-pg.log
+pg*.log
 package*.json

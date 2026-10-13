@@ -52,13 +52,44 @@
       "fontFamilies": [
         {
           "slug": "heading",
-          "name": "Roboto Condensed",
-          "fontFamily": "'Roboto Condensed', 'Helvetica Neue', Arial, sans-serif"
+          "name": "Oswald",
+          "fontFamily": "Oswald, system-ui, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Oswald",
+              "fontWeight": "500 700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/oswald-latin-wght-normal.woff2"
+              ]
+            }
+          ]
         },
         {
           "slug": "body",
           "name": "Inter",
-          "fontFamily": "Inter, 'Helvetica Neue', Arial, sans-serif"
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Inter",
+              "fontWeight": "100 900",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/inter-latin-wght-normal.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Inter",
+              "fontWeight": "100 900",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/inter-latin-wght-italic.woff2"
+              ]
+            }
+          ]
         }
       ],
       "fontSizes": [
@@ -131,7 +162,7 @@
       "heading": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--heading)",
-          "fontWeight": "700",
+          "fontWeight": "600",
           "lineHeight": "1.15"
         },
         "color": {

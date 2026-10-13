@@ -14,7 +14,7 @@
       "step": "installTheme",
       "themeData": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=2"
+        "url": "https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=3"
       },
       "options": {
         "activate": true
