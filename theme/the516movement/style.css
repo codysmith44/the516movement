@@ -1,0 +1,18 @@
+/*
+Theme Name: The 516 Movement
+Theme URI: https://github.com/codysmith44/the516movement
+Author: Cody Smith
+Description: Modern block theme rebuild for M516, Inc. (The 516 Movement) - a Christ-centered ministry. Trial build.
+Version: 0.1.0
+Requires at least: 6.5
+Requires PHP: 7.4
+License: GPLv2 or later
+Text Domain: the516movement
+*/
+
+.site-header{z-index:50;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.wp-block-gallery.is-cropped img{border-radius:8px}
+.wp-block-table th{background:var(--wp--preset--color--navy);color:#fff;text-align:left}
+.wp-block-table td,.wp-block-table th{padding:.6rem .9rem}
+.skip-link:focus{position:fixed;top:0;left:0;z-index:999;background:#fff;padding:.5rem 1rem}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

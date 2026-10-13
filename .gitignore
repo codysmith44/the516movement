@@ -1,0 +1,5 @@
+node_modules/
+src/
+home.html
+pg.log
+package*.json
