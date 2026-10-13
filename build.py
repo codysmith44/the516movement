@@ -8,7 +8,7 @@ Theme Name: The 516 Movement
 Theme URI: https://github.com/codysmith44/the516movement
 Author: Cody Smith
 Description: Modern block theme rebuild for M516, Inc. (The 516 Movement) - a Christ-centered ministry. Trial build.
-Version: 0.1.0
+Version: 0.2.0
 Requires at least: 6.5
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -52,10 +52,10 @@ theme = {
  "templateParts":[{"name":"header","title":"Header","area":"header"},{"name":"footer","title":"Footer","area":"footer"}],
  "customTemplates":[{"name":"page-no-title","title":"Page (no title)","postTypes":["page"]}]}
 w('theme.json', json.dumps(theme, indent=2))
-w('parts/header.html', f"""<!-- wp:group {{"tagName":"header","style":{{"spacing":{{"padding":{{"top":"0.75rem","bottom":"0.75rem"}}}},"position":{{"type":"sticky","top":"0px"}}}},"backgroundColor":"base","className":"site-header","layout":{{"type":"constrained","contentSize":"1200px"}}}} -->
-<header class="wp-block-group site-header has-base-background-color has-background" style="padding-top:0.75rem;padding-bottom:0.75rem"><!-- wp:group {{"layout":{{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap"}}}} -->
-<div class="wp-block-group"><!-- wp:html --><a class="m516-logo" href="/" rel="home"><img src="https://the516movement.com/wp-content/themes/the-516-movement/images/516-logo.png" alt="The 516 Movement home" width="180" height="60" style="height:56px;width:auto"/></a><!-- /wp:html -->
-<!-- wp:navigation {{"overlayMenu":"mobile","layout":{{"type":"flex","justifyContent":"right"}}}} /--></div>
+w('parts/header.html', f"""<!-- wp:group {{"tagName":"header","style":{{"spacing":{{"padding":{{"top":"0.75rem","bottom":"0.75rem"}}}},"position":{{"type":"sticky","top":"0px"}}}},"backgroundColor":"navy","textColor":"base","className":"site-header","layout":{{"type":"constrained","contentSize":"1200px"}}}} -->
+<header class="wp-block-group site-header has-base-color has-navy-background-color has-text-color has-background" style="padding-top:0.75rem;padding-bottom:0.75rem"><!-- wp:group {{"layout":{{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap"}}}} -->
+<div class="wp-block-group"><!-- wp:html --><a class="m516-logo" href="/" rel="home"><img src="https://the516movement.com/wp-content/themes/the-516-movement/images/516-logo.png" alt="The 516 Movement home" width="180" height="60" style="height:64px;width:auto;display:block"/></a><!-- /wp:html -->
+<!-- wp:navigation {{"overlayMenu":"mobile","textColor":"base","backgroundColor":"navy","overlayTextColor":"base","overlayBackgroundColor":"navy","layout":{{"type":"flex","justifyContent":"right"}}}} /--></div>
 <!-- /wp:group --></header>
 <!-- /wp:group -->""")
 w('parts/footer.html', """<!-- wp:group {"tagName":"footer","style":{"spacing":{"padding":{"top":"3rem","bottom":"2rem"}},"elements":{"link":{"color":{"text":"#ffffff"}},"heading":{"color":{"text":"#ffffff"}}}},"backgroundColor":"navy","textColor":"base","layout":{"type":"constrained","contentSize":"1200px"}} -->
@@ -156,7 +156,17 @@ w('patterns/cta-booking.php', "<?php\n/**\n * Title: Booking / Donate CTA\n * Sl
 w('patterns/values-cards.php', "<?php\n/**\n * Title: Values cards\n * Slug: the516movement/values-cards\n * Categories: the516movement\n */\n?>\n"+pages['Our Values'][1].split('<!-- wp:quote')[0])
 w('patterns/home.php', "<?php\n/**\n * Title: Home page\n * Slug: the516movement/home\n * Categories: the516movement\n * Block Types: core/post-content\n */\n?>\n"+home)
 w('style.css', (T/'style.css').read_text()+"""
-.site-header{z-index:50;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.site-header{z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.site-header .wp-block-navigation a,.site-header .wp-block-navigation button{color:#fff}
+.site-header .wp-block-navigation .wp-block-navigation-item__content{padding:.35rem .15rem;border-bottom:2px solid transparent}
+.site-header .wp-block-navigation .wp-block-navigation-item__content:hover,.site-header .current-menu-item>.wp-block-navigation-item__content{border-bottom-color:#c3272f;text-decoration:none}
+.site-header .wp-block-navigation a:focus-visible,.site-header .wp-block-navigation button:focus-visible,.m516-logo:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:2px}
+.site-header .wp-block-navigation__submenu-container{background:#072a44!important;color:#fff!important;border:0!important;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.3);padding:.4rem 0}
+.site-header .wp-block-navigation__submenu-container .wp-block-navigation-item__content{padding:.55rem 1.1rem!important;border-bottom:0}
+.site-header .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,.site-header .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus-visible{background:#0f75bc}
+.site-header .wp-block-navigation__responsive-container.is-menu-open{background:#0b3e63!important;color:#fff!important}
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{background:transparent!important;box-shadow:none}
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{font-size:1.15rem}
 .wp-block-gallery.is-cropped img{border-radius:8px}
 .wp-block-table th{background:var(--wp--preset--color--navy);color:#fff;text-align:left}
 .wp-block-table td,.wp-block-table th{padding:.6rem .9rem}
@@ -181,5 +191,5 @@ def bp(theme_step):
   return {"$schema":"https://playground.wordpress.net/blueprint-schema.json","landingPage":"/","preferredVersions":{"php":"8.2","wp":"latest"},
    "features":{"networking":True},"login":True,
    "steps":[theme_step,{"step":"runPHP","code":php}]}
-json.dump(bp({"step":"installTheme","themeData":{"resource":"url","url":"https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip"},"options":{"activate":True}}), open('blueprint.json','w'), indent=2)
+json.dump(bp({"step":"installTheme","themeData":{"resource":"url","url":"https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=2"},"options":{"activate":True}}), open('blueprint.json','w'), indent=2)
 json.dump(bp({"step":"activateTheme","themeFolderName":"the516movement"}), open('blueprint.local.json','w'), indent=2)

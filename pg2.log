@@ -1,0 +1,10 @@
+
+WordPress Playground CLI
+
+PHP 8.3  WordPress latest
+Extensions intl
+Blueprint https://raw.githubusercontent.com/codysmith44/the516movement/main/blueprint.json
+
+
+Ready! WordPress is running on http://127.0.0.1:9401 (6 workers)
+
