@@ -3,7 +3,7 @@ Theme Name: The 516 Movement
 Theme URI: https://github.com/codysmith44/the516movement
 Author: Cody Smith
 Description: Modern block theme rebuild for M516, Inc. (The 516 Movement) - a Christ-centered ministry. Trial build.
-Version: 0.5.0
+Version: 0.5.1
 Requires at least: 6.5
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -302,3 +302,12 @@ em{font-family:var(--wp--preset--font-family--heading);font-style:italic;font-we
 .section-head{margin-bottom:var(--wp--preset--spacing--50)!important}
 .m-hero .display{margin-top:0!important}
 @media (max-width:900px){.hero-verse{margin-left:0!important}}
+/* Mobile menu fix: backdrop-filter on the header made it the containing block for the
+   fixed overlay (overlay clipped to header height). Move the blur onto a pseudo-element. */
+.site-header{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;position:relative}
+.site-header::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(11,62,99,.96);-webkit-backdrop-filter:saturate(140%) blur(10px);backdrop-filter:saturate(140%) blur(10px);pointer-events:none}
+.site-header .wp-block-navigation__responsive-container.is-menu-open{position:fixed;inset:0;height:auto!important;max-height:none;overflow-y:auto;overscroll-behavior:contain;z-index:100000}
+.admin-bar .site-header .wp-block-navigation__responsive-container.is-menu-open{top:var(--wp-admin--admin-bar--height,0px)}
+.site-header .wp-block-navigation__responsive-container-close{color:#fff}
+.site-header .wp-block-navigation__responsive-container-close:focus-visible,.site-header .wp-block-navigation__responsive-container-open:focus-visible{outline:3px solid var(--glow);outline-offset:3px}
+@media (min-width:600px) and (max-width:960px){.site-header .wp-block-navigation{gap:1rem;font-size:1rem}.site-header__nav{gap:1rem}}

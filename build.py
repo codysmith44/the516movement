@@ -12,7 +12,7 @@ Theme Name: The 516 Movement
 Theme URI: https://github.com/codysmith44/the516movement
 Author: Cody Smith
 Description: Modern block theme rebuild for M516, Inc. (The 516 Movement) - a Christ-centered ministry. Trial build.
-Version: 0.5.0
+Version: 0.5.1
 Requires at least: 6.5
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -198,5 +198,5 @@ def bp(theme_step):
   return {"$schema":"https://playground.wordpress.net/blueprint-schema.json","landingPage":"/","preferredVersions":{"php":"8.2","wp":"latest"},
    "features":{"networking":True},"login":True,
    "steps":[theme_step,{"step":"runPHP","code":php}]}
-json.dump(bp({"step":"installTheme","themeData":{"resource":"url","url":"https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=6"},"options":{"activate":True}}), open('blueprint.json','w'), indent=2)
+json.dump(bp({"step":"installTheme","themeData":{"resource":"url","url":"https://raw.githubusercontent.com/codysmith44/the516movement/main/the516movement-theme.zip?v=7"},"options":{"activate":True}}), open('blueprint.json','w'), indent=2)
 json.dump(bp({"step":"activateTheme","themeFolderName":"the516movement"}), open('blueprint.local.json','w'), indent=2)
