@@ -78,7 +78,7 @@ w('patterns/editorial-split.php', "<?php\n/**\n * Title: Editorial split with pu
 w('patterns/collage.php', "<?php\n/**\n * Title: Photo collage\n * Slug: the516movement/collage\n * Categories: the516movement, gallery\n */\n?>\n"+collage)
 # nicer form placeholders
 def field(l,t='text',full=False): return f'<label class="{"full" if full else ""}"><span>{l}</span>'+('<span class="field-box is-area"></span>' if t=='area' else '<span class="field-box"></span>')+'</label>'
-def mock(title,fields,note): return '<!-- wp:html --><div class="form-mock" role="group" aria-label="'+title+' (preview)"><p class="form-mock__tag">Preview · form plugin goes here</p><h3>'+title+'</h3><div class="form-mock__grid">'+''.join(fields)+'</div><span class="form-mock__btn" aria-hidden="true">Submit</span><p class="form-mock__note">'+note+'</p></div><!-- /wp:html -->\n'
+def mock(title,fields,note): return '<!-- wp:html --><div class="form-mock" role="group" aria-label="'+title+' (preview)"><h3>'+title+'</h3><div class="form-mock__grid">'+''.join(fields)+'</div><span class="form-mock__btn" aria-hidden="true">Submit</span><p class="form-mock__note">'+note+'</p></div><!-- /wp:html -->\n'
 import re
 bk=mock('Booking questionnaire',[field('Contact name'),field('Phone','tel'),field('Email','email'),field('Sponsoring organization'),field('Event name'),field('Event date','date'),field('Event location & closest airport',full=True),field('Brief event description','area',True)],'[PLACEHOLDER] The live site uses Gravity Forms. Rebuild it with a form plugin and embed it here.')
 pages['Booking']=(pages['Booking'][0], re.sub(r'<!-- wp:group \{"className":"m-card".*?<!-- /wp:group -->', lambda m: bk, pages['Booking'][1], count=1, flags=re.S))

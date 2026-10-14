@@ -1,0 +1,8 @@
+<?php
+/**
+ * Title: Photo and text
+ * Slug: the516movement/photo-and-text
+ * Categories: the516movement
+ */
+?>
+<!-- wp:group {"tagName":"section","align":"full","className":"m-section","layout":{"type":"constrained"}} --><section class="wp-block-group alignfull m-section"><!-- wp:group {"align":"wide","className":"editorial","layout":{"type":"default"}} --><div class="wp-block-group alignwide editorial"><!-- wp:image {"className":"editorial__photo"} --><figure class="wp-block-image editorial__photo"><img src="https://the516movement.com/wp-content/uploads/2015/08/Family-Photo-2023-2.jpg" alt="Ryan Young with his wife Karistin and their children, Annslee and Cross"/></figure><!-- /wp:image --><!-- wp:group {"className":"editorial__body","layout":{"type":"default"}} --><div class="wp-block-group editorial__body"><!-- wp:heading {"level":2,"className":"section-title"} --><h2 class="wp-block-heading section-title">Meet Ryan Young</h2><!-- /wp:heading --><!-- wp:paragraph {"className":""} --><p class="">Ryan has surrendered his life to Jesus Christ. He is married to his amazing wife, Karistin. They have a beautiful daughter, Annslee, and a handsome son, Cross.</p><!-- /wp:paragraph --><!-- wp:paragraph {"className":""} --><p class="">He has served in student ministry for 20 years and has led mission teams locally, nationally and internationally. Missions isn’t just an international concept. Where there are people, there are mission opportunities.</p><!-- /wp:paragraph --><!-- wp:paragraph {"className":"more"} --><p class="more"><a href="/about-ryan/">More about Ryan</a></p><!-- /wp:paragraph --></div><!-- /wp:group --></div><!-- /wp:group --></section><!-- /wp:group -->

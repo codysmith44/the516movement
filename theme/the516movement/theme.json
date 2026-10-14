@@ -21,39 +21,29 @@
           "color": "#0b3e63"
         },
         {
-          "slug": "night",
-          "name": "Night",
-          "color": "#05121f"
-        },
-        {
           "slug": "accent",
           "name": "Red",
           "color": "#c3272f"
         },
         {
-          "slug": "glow",
-          "name": "Glow",
-          "color": "#f4b860"
-        },
-        {
           "slug": "ink",
           "name": "Ink",
-          "color": "#14202b"
+          "color": "#1d2329"
         },
         {
           "slug": "muted",
           "name": "Slate",
-          "color": "#4a545a"
+          "color": "#525b62"
         },
         {
           "slug": "paper",
           "name": "Paper",
-          "color": "#f6f2ea"
+          "color": "#f5f2ec"
         },
         {
-          "slug": "light",
-          "name": "Light",
-          "color": "#ece6da"
+          "slug": "rule",
+          "name": "Rule",
+          "color": "#dcd6cb"
         },
         {
           "slug": "base",
@@ -61,70 +51,57 @@
           "color": "#ffffff"
         }
       ],
-      "gradients": [
-        {
-          "slug": "night-glow",
-          "name": "Night glow",
-          "gradient": "radial-gradient(120% 80% at 80% 0%, rgba(244,184,96,.35) 0%, rgba(11,62,99,0) 45%), linear-gradient(180deg,#0b3e63 0%,#05121f 100%)"
-        }
-      ]
+      "gradients": []
     },
     "typography": {
       "fluid": true,
       "fontFamilies": [
         {
           "slug": "heading",
-          "name": "Oswald",
-          "fontFamily": "Oswald, system-ui, sans-serif",
+          "name": "Newsreader",
+          "fontFamily": "Newsreader, Georgia, 'Times New Roman', serif",
           "fontFace": [
             {
-              "fontFamily": "Oswald",
-              "fontWeight": "500 700",
+              "fontFamily": "Newsreader",
+              "fontWeight": "200 800",
               "fontStyle": "normal",
               "fontDisplay": "swap",
               "src": [
-                "file:./assets/fonts/oswald-latin-wght-normal.woff2"
+                "file:./assets/fonts/newsreader-latin-opsz-normal.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Newsreader",
+              "fontWeight": "200 800",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/newsreader-latin-opsz-italic.woff2"
               ]
             }
           ]
         },
         {
           "slug": "body",
-          "name": "Inter",
-          "fontFamily": "Inter, system-ui, sans-serif",
+          "name": "Source Sans 3",
+          "fontFamily": "'Source Sans 3', 'Segoe UI', Arial, sans-serif",
           "fontFace": [
             {
-              "fontFamily": "Inter",
-              "fontWeight": "100 900",
+              "fontFamily": "Source Sans 3",
+              "fontWeight": "200 900",
               "fontStyle": "normal",
               "fontDisplay": "swap",
               "src": [
-                "file:./assets/fonts/inter-latin-wght-normal.woff2"
+                "file:./assets/fonts/source-sans-3-latin-wght-normal.woff2"
               ]
             },
             {
-              "fontFamily": "Inter",
-              "fontWeight": "100 900",
+              "fontFamily": "Source Sans 3",
+              "fontWeight": "200 900",
               "fontStyle": "italic",
               "fontDisplay": "swap",
               "src": [
-                "file:./assets/fonts/inter-latin-wght-italic.woff2"
-              ]
-            }
-          ]
-        },
-        {
-          "slug": "accent",
-          "name": "Fraunces Italic",
-          "fontFamily": "Fraunces, Georgia, serif",
-          "fontFace": [
-            {
-              "fontFamily": "Fraunces",
-              "fontWeight": "300 900",
-              "fontStyle": "italic",
-              "fontDisplay": "swap",
-              "src": [
-                "file:./assets/fonts/fraunces-latin-wght-italic.woff2"
+                "file:./assets/fonts/source-sans-3-latin-wght-italic.woff2"
               ]
             }
           ]
@@ -134,15 +111,15 @@
         {
           "slug": "small",
           "name": "Small",
-          "size": "0.875rem"
+          "size": "0.9375rem"
         },
         {
           "slug": "medium",
           "name": "Body",
-          "size": "1.0625rem",
+          "size": "1.1875rem",
           "fluid": {
-            "min": "1rem",
-            "max": "1.125rem"
+            "min": "1.0625rem",
+            "max": "1.1875rem"
           }
         },
         {
@@ -150,35 +127,35 @@
           "name": "Large",
           "size": "1.5rem",
           "fluid": {
-            "min": "1.25rem",
+            "min": "1.3rem",
             "max": "1.5rem"
           }
         },
         {
           "slug": "x-large",
           "name": "XL",
-          "size": "2.75rem",
+          "size": "2.5rem",
           "fluid": {
-            "min": "2rem",
-            "max": "2.75rem"
+            "min": "1.9rem",
+            "max": "2.5rem"
           }
         },
         {
           "slug": "xx-large",
           "name": "XXL",
-          "size": "4.5rem",
+          "size": "3.75rem",
           "fluid": {
-            "min": "2.75rem",
-            "max": "4.5rem"
+            "min": "2.5rem",
+            "max": "3.75rem"
           }
         },
         {
           "slug": "huge",
           "name": "Display",
-          "size": "8.5rem",
+          "size": "5.25rem",
           "fluid": {
-            "min": "3.4rem",
-            "max": "8.5rem"
+            "min": "3rem",
+            "max": "5.25rem"
           }
         }
       ]
@@ -237,7 +214,7 @@
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--body)",
       "fontSize": "var(--wp--preset--font-size--medium)",
-      "lineHeight": "1.7"
+      "lineHeight": "1.6"
     },
     "spacing": {
       "blockGap": "var(--wp--preset--spacing--40)",
@@ -250,29 +227,31 @@
       "heading": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--heading)",
-          "fontWeight": "600",
-          "lineHeight": "1.05",
-          "letterSpacing": "-0.01em",
-          "textTransform": "uppercase"
+          "fontWeight": "500",
+          "lineHeight": "1.12",
+          "letterSpacing": "-0.01em"
         },
         "color": {
-          "text": "var(--wp--preset--color--navy)"
+          "text": "var(--wp--preset--color--ink)"
         }
       },
       "link": {
         "color": {
-          "text": "var(--wp--preset--color--primary)"
+          "text": "var(--wp--preset--color--navy)"
+        },
+        "typography": {
+          "textDecoration": "underline"
         },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--navy)"
+            "text": "var(--wp--preset--color--accent)"
           }
         },
         ":focus": {
           "outline": {
             "width": "2px",
             "style": "solid",
-            "color": "var(--wp--preset--color--accent)",
+            "color": "var(--wp--preset--color--primary)",
             "offset": "2px"
           }
         }
@@ -283,80 +262,80 @@
           "text": "#fff"
         },
         "border": {
-          "radius": "999px"
+          "radius": "3px"
         },
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--heading)",
-          "fontWeight": "500",
-          "fontSize": "0.95rem",
-          "textTransform": "uppercase",
-          "letterSpacing": "0.08em"
+          "fontFamily": "var(--wp--preset--font-family--body)",
+          "fontWeight": "600",
+          "fontSize": "1.0625rem",
+          "textTransform": "none",
+          "letterSpacing": "0"
         },
         "spacing": {
           "padding": {
-            "top": "1rem",
-            "bottom": "1rem",
-            "left": "1.75rem",
-            "right": "1.75rem"
+            "top": "0.85rem",
+            "bottom": "0.85rem",
+            "left": "1.4rem",
+            "right": "1.4rem"
           }
         },
         ":hover": {
           "color": {
-            "background": "var(--wp--preset--color--night)"
+            "background": "#072c47"
           }
         },
         ":focus": {
           "outline": {
             "width": "3px",
             "style": "solid",
-            "color": "var(--wp--preset--color--glow)",
-            "offset": "3px"
+            "color": "var(--wp--preset--color--primary)",
+            "offset": "2px"
           }
         }
       },
       "h1": {
         "typography": {
-          "fontSize": "var(--wp--preset--font-size--xx-large)"
+          "fontSize": "var(--wp--preset--font-size--huge)",
+          "lineHeight": "1.02"
         }
       },
       "h2": {
         "typography": {
-          "fontSize": "var(--wp--preset--font-size--x-large)"
+          "fontSize": "var(--wp--preset--font-size--xx-large)"
         }
       },
       "h3": {
         "typography": {
           "fontSize": "var(--wp--preset--font-size--large)",
-          "letterSpacing": "0.01em"
+          "fontWeight": "600"
         }
       }
     },
     "blocks": {
       "core/navigation": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--heading)",
-          "textTransform": "uppercase",
-          "fontSize": "0.95rem",
-          "letterSpacing": "0.03em"
+          "fontFamily": "var(--wp--preset--font-family--body)",
+          "fontSize": "1.0625rem",
+          "fontWeight": "500"
         }
       },
       "core/quote": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--heading)",
+          "fontStyle": "italic",
+          "fontSize": "var(--wp--preset--font-size--large)",
+          "lineHeight": "1.4"
+        },
         "border": {
           "left": {
-            "color": "var(--wp--preset--color--accent)",
-            "width": "3px"
+            "width": "0px",
+            "style": "none"
           }
         },
         "spacing": {
           "padding": {
-            "left": "1.5rem"
+            "left": "0"
           }
-        },
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--accent)",
-          "fontStyle": "italic",
-          "fontSize": "var(--wp--preset--font-size--large)",
-          "lineHeight": "1.35"
         }
       }
     }

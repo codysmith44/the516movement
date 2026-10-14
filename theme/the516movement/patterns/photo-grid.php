@@ -1,0 +1,8 @@
+<?php
+/**
+ * Title: Photo grid with captions
+ * Slug: the516movement/photo-grid
+ * Categories: the516movement, gallery
+ */
+?>
+<!-- wp:group {"tagName":"section","align":"full","className":"m-section is-paper","layout":{"type":"constrained"}} --><section class="wp-block-group alignfull m-section is-paper"><!-- wp:group {"align":"wide","className":"gallery-wrap","layout":{"type":"default"}} --><div class="wp-block-group alignwide gallery-wrap"><!-- wp:heading {"level":2,"className":"section-title"} --><h2 class="wp-block-heading section-title">Ministry in action</h2><!-- /wp:heading --><!-- wp:group {"align":"wide","className":"photo-grid","layout":{"type":"default"}} --><div class="wp-block-group alignwide photo-grid"><!-- wp:image {"className":"p1"} --><figure class="wp-block-image p1"><img src="https://the516movement.com/wp-content/uploads/2015/08/Falls-Creek-2023-2-2.jpg" alt="Worship at Falls Creek"/><figcaption class="wp-element-caption">Worship at Falls Creek</figcaption></figure><!-- /wp:image --><!-- wp:image {"className":"p2"} --><figure class="wp-block-image p2"><img src="https://the516movement.com/wp-content/uploads/2015/08/Japan-2023-2-2.jpg" alt="Mission trip to Japan"/><figcaption class="wp-element-caption">Mission trip to Japan</figcaption></figure><!-- /wp:image --><!-- wp:image {"className":"p3"} --><figure class="wp-block-image p3"><img src="https://the516movement.com/wp-content/uploads/2015/08/Duncan-2025-2.jpg" alt="Duncan, Oklahoma"/><figcaption class="wp-element-caption">Duncan, Oklahoma</figcaption></figure><!-- /wp:image --></div><!-- /wp:group --></div><!-- /wp:group --></section><!-- /wp:group -->
