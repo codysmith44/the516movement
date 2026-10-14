@@ -1,0 +1,58 @@
+
+/* ===== v4: v2 energy, serif voice, no caps/eyebrows/top-border cards ===== */
+body{font-optical-sizing:auto}
+h1,h2,h3{font-optical-sizing:auto;text-wrap:balance}
+em{font-family:var(--wp--preset--font-family--heading);font-style:italic;font-weight:400}
+/* Display serif: heavy roman + light italic accent from the same family */
+.display{font-weight:700!important;letter-spacing:-.035em!important;line-height:.9!important;font-size:clamp(3.4rem,10vw,9rem)!important}
+.display em{font-weight:350;letter-spacing:-.02em;font-size:1em}
+.display.is-md{font-size:clamp(3rem,7.5vw,6.5rem)!important}
+.section-title{font-weight:700!important;letter-spacing:-.03em!important;line-height:.95!important}
+.section-title em{font-weight:350;font-size:1em}
+.section-title.is-light{color:#fff!important;font-size:clamp(2.4rem,4.5vw,4rem)!important;margin:0!important}
+.statement{font-family:var(--wp--preset--font-family--heading);font-weight:600;letter-spacing:-.025em;line-height:1.08;font-size:clamp(2.1rem,4.6vw,4.2rem)!important}
+.statement em{font-weight:350}
+.band__title{font-weight:700!important;letter-spacing:-.03em;line-height:.95!important}
+.band__title em{font-weight:350}
+.footer-mark{font-family:var(--wp--preset--font-family--heading);font-weight:700;letter-spacing:-.035em;line-height:.95}
+.footer-mark em{font-weight:350}
+.page-hero__title{font-weight:700!important;letter-spacing:-.035em!important;line-height:.92!important}
+.num{font-family:var(--wp--preset--font-family--heading);font-weight:300;font-style:italic;-webkit-text-stroke:0;color:var(--navy);opacity:.9;font-size:clamp(3.6rem,7vw,6rem)!important}
+.num-item:hover .num{color:var(--red)}
+.num-item h3{font-weight:700!important;letter-spacing:-.02em}
+.stat strong{font-family:var(--wp--preset--font-family--heading);font-weight:600;letter-spacing:-.03em}
+/* Nav / buttons / labels in sentence case, body sans */
+.site-header .wp-block-navigation{font-family:var(--wp--preset--font-family--body);font-size:1.0625rem;font-weight:500;letter-spacing:0}
+.header-cta .wp-block-button__link{font-size:.98rem!important}
+.wp-element-button,.wp-block-button__link{font-family:var(--wp--preset--font-family--body);letter-spacing:0;font-weight:600}
+.footer-h{font-family:var(--wp--preset--font-family--body)!important;font-size:1rem!important;font-weight:600!important;color:var(--glow)!important}
+.footer-legal{letter-spacing:0}
+.wp-block-table th{font-family:var(--wp--preset--font-family--body);font-size:.95rem;font-weight:600}
+.wp-block-table td:first-child{font-family:var(--wp--preset--font-family--heading);font-size:1.25rem;font-weight:600;letter-spacing:-.01em}
+.form-mock__btn{font-family:var(--wp--preset--font-family--body);letter-spacing:0}
+.entry blockquote cite{font-family:var(--wp--preset--font-family--body);letter-spacing:0;font-size:1rem;color:var(--muted,#4a545a)}
+.entry blockquote cite::before{content:"— "}
+.entry blockquote cite:empty{display:none}
+/* Cards: no colored top border, square, quiet fill */
+.m-card{border-top:0!important;border-radius:0!important;background:var(--paper);padding:2rem!important}
+.m-card:hover{transform:none;box-shadow:none}
+.m-card h3{font-weight:700!important}
+/* Scripture as quotation */
+.scripture{border:0!important;padding:0!important;margin:0!important}
+.scripture p{font-family:var(--wp--preset--font-family--heading)!important;font-style:italic;font-weight:400;line-height:1.35}
+.scripture cite{display:block;margin-top:.75rem;font-family:var(--wp--preset--font-family--body)!important;font-style:normal!important;font-size:1rem!important;text-align:left!important}
+.scripture cite::before{content:"— "}
+.hero-verse{max-width:30rem;margin-top:clamp(2.5rem,6vh,4rem)!important;margin-left:auto!important;padding-left:1.25rem!important;border-left:2px solid var(--glow)!important}
+.hero-verse p{font-size:clamp(1.15rem,1.5vw,1.35rem)!important;color:#fff}
+.hero-verse cite{color:var(--glow)!important}
+.m-hero .hero-stats{margin-top:clamp(2rem,4vh,3rem)!important}
+.scripture.is-centered{max-width:36rem!important;margin:2rem auto 0!important;text-align:center}
+.scripture.is-centered p{font-size:clamp(1.4rem,2.2vw,1.8rem)!important;color:#fff}
+.scripture.is-centered cite{text-align:center!important;color:var(--glow)!important}
+.m-answer .lead{margin-top:1.5rem!important}
+.editorial__body .section-title.is-light+.pull{margin-top:2rem!important}
+.pull p{font-family:var(--wp--preset--font-family--heading)!important;font-weight:350}
+.split__aside .section-title{margin-top:0!important}
+.section-head{margin-bottom:var(--wp--preset--spacing--50)!important}
+.m-hero .display{margin-top:0!important}
+@media (max-width:900px){.hero-verse{margin-left:0!important}}
